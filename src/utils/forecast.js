@@ -10,7 +10,7 @@ const forecast = (location, callback) => {
         } else if (body.error) {
             callback('Unable to find location', null);
         } else {
-            callback(null, `It is currently ${body.current.weather_descriptions[0]} with ${body.current.temperature} degress out in ${body.location.name}, ${body.location.region}, ${body.location.country}. There is a ${body.current.precip}% chance of rain.`);
+            callback(null, `It is currently ${body.current.weather_descriptions[0]} with ${body.current.temperature} degress out in ${body.location.name}, ${body.location.region}, ${body.location.country}. There is a ${body.current.precip}% chance of rain. It also feels like ${body.current.feelslike} F with humidity at ${body.current.humidity}%.`);
         }
     });
 }
